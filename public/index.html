@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Hello World!</title>
+    <! -- <script type = "module" src="./play.js"></script> -->
+  </head>
+  <body>
+
+    <h1>Hello, World!</h1>
+    <h4>Hey, click on the button below to invoke the function</h4>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type = "module" src="./play.js"></script>
+
+    <input type = "button" onclick = "makeRequest()" value = "Click Mee">
+
+    <a button name="btn" href="http://localhost:3000/redirect">click me</a>
+
+    <button id="btn" type="button" onclick="clickHandler()">Click Me!</button>
+
+    <script>
+        function clickHandler() {
+
+        const BASE_URL = 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes';
+
+            const makeRequest = async () => {
+              try {
+                const response =  axios.get(BASE_URL)
+                .then((response) => {
+                  // console.log(response.data);
+                  console.log(response.status);
+                //   console.log(response.statusText);
+                //   console.log(response.headers);
+                //   console.log(response.config);
+                });
+
+                return response
+              } catch (errors) {
+                console.error(errors);
+              }
+            };
+            makeRequest()
+
+          alert("something");
+        }
+    </script>
+    
+    <! -- <img src="shark.png" alt="shark"> -->
+
+  </body>
+</html>
